@@ -12,9 +12,9 @@ export default class HelloWorld extends Vue {
 
   $props!: {
     who: string
-    onSomeThing: () => void
   }
 
+  // This causes an error to be shown - ts(2416)
   $emit!: {
     (e: 'my-event-1'): void
     (e: 'my-event-2', arg1: string, arg2: number): void
