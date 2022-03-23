@@ -3,6 +3,7 @@
 </template>
 
 <script lang="ts">
+import { VNode } from 'vue'
 import { Component, Vue, Prop } from 'vue-property-decorator'
 
 @Component
@@ -11,6 +12,18 @@ export default class HelloWorld extends Vue {
 
   $props!: {
     who: string
+    onSomeThing: () => void
+  }
+
+  $emit!: {
+    (e: 'my-event-1'): void
+    (e: 'my-event-2', arg1: string, arg2: number): void
+  }
+
+  $scopedSlots!: {
+    // $scopedSlots for vue2, $slots for vue3
+    'my-slot-1': () => VNode[]
+    'my-slot-2': (bindings: { arg1: string; arg2: number }) => VNode[]
   }
 }
 </script>

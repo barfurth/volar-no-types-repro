@@ -17,6 +17,13 @@
     },
     "types": ["@nuxt/types", "@types/node"]
   },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
   "exclude": ["node_modules", ".nuxt", "dist"],
   "vueCompilerOptions": {
     "experimentalCompatMode": 2,
